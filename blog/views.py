@@ -7,10 +7,10 @@ from django.http import HttpResponse
 def post_list(request):
     #return (HttpResponse("Hello world."))
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return (render(request, 'blog/post_list.html', {'posts': posts}))
+    return render(request, 'blog/post_list.html', {'posts': posts})
 
-def post_detail(request, pk):
+def post_detail(request, post_id):
     #post = Post.objects.get(pk=pk)
-    #post = get_object_or_404(Post, pk=pk)
-    #return render(request, 'blog/post_detail.html', {'post': post})
-    return render(HttpResponse("Hello world."))
+    #return HttpResponse("Post detalhe número {}.".format(post_id))
+    post = get_object_or_404(Post, pk=post_id)
+    return render(request, 'blog/post_detail.html', {'post': post})
