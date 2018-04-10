@@ -16,6 +16,9 @@
                 {% if user.is_authenticated %}
                     <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
                     <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
+                    <p class="top-menu"><small style="font-size: 25px">Bem vindo(a) {{ user.username }}. / <a href="{% url 'logout' %}">Encerrar sessão</a></small></p>
+                {% else %}
+                    <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
                 {% endif %}
                 <h1><a href="{% url 'post_list' %}">Blog de Marcio Grazianni</a></h1>
             </div>
