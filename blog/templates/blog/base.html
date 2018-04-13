@@ -23,13 +23,13 @@
         <body>
             <div class="page-header">
                 {% if user.is_authenticated %}
-                    <a href="{% url 'post_new' %}" class="top-menu"><span class="fas fa-plus-circle"></span></a>
-                    <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="fas fa-edit"></span></a>
-                    <p class="top-menu"><small style="font-size: 20px">Bem vindo(a) {{ user.username }}. / <a href="{% url 'logout' %}">Encerrar sessão</a></small></p>
+                    <a href="{% url 'post_new' %}" class="btn btn-primary top-menu">Adicionar</a>
+                    <a href="{% url 'post_draft_list' %}" class="btn btn-secondary top-menu">Rascunhos</a>
+                    <p class="top-menu"><small style="font-size: 20px">Bem vindo(a) {{ user.username }}. / <a href="{% url 'logout' %}" class="btn btn-danger">Encerrar sessão</a></small></p>
                 {% else %}
                     <a href="{% url 'login' %}" class="top-menu"><span class="fas fa-user"></span></a>
                 {% endif %}
-                <h1 class="fonte fas fa-2x"><a href="{% url 'post_list' %}">Blog de Marcio Grazianni</a></h1>
+                <h1 class="fonte"><a href="{% url 'post_list' %}">Blog de Marcio Grazianni</a></h1>
             </div>
             <div class="content container">
                 <div class="row">
