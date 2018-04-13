@@ -1,3 +1,8 @@
+.fonte {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+
 .page-header {
   background-color: #ff9400;
   margin-top: 0;
@@ -12,10 +17,6 @@
 
 .content {
   margin-left: 40px;
-}
-
-h1, h2, h3, h4 {
-  font-family: 'Lobster', cursive;
 }
 
 .date {

@@ -3,9 +3,17 @@
 
     <head>
         <title>Blog de Marcio Grazianni</title>
+        <!--
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        -->
+        <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/css/bootstrap-theme.min.css' %}">
+
+        <link rel="stylesheet" href="{% static 'blog/css/fa-solid.min.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/css/fontawesome.min.css' %}">
+
         <link rel="stylesheet" href="{% static 'blog/style.css' %}">
         <link rel="shortcut icon" href="{% static 'blog/favicon.ico' %}"/>
     </head>
@@ -15,13 +23,13 @@
         <body>
             <div class="page-header">
                 {% if user.is_authenticated %}
-                    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-                    <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
-                    <p class="top-menu"><small style="font-size: 25px">Bem vindo(a) {{ user.username }}. / <a href="{% url 'logout' %}">Encerrar sessão</a></small></p>
+                    <a href="{% url 'post_new' %}" class="top-menu"><span class="fas fa-plus-circle"></span></a>
+                    <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="fas fa-edit"></span></a>
+                    <p class="top-menu"><small style="font-size: 20px">Bem vindo(a) {{ user.username }}. / <a href="{% url 'logout' %}">Encerrar sessão</a></small></p>
                 {% else %}
-                    <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
+                    <a href="{% url 'login' %}" class="top-menu"><span class="fas fa-user"></span></a>
                 {% endif %}
-                <h1><a href="{% url 'post_list' %}">Blog de Marcio Grazianni</a></h1>
+                <h1 class="fonte fas fa-2x"><a href="{% url 'post_list' %}">Blog de Marcio Grazianni</a></h1>
             </div>
             <div class="content container">
                 <div class="row">
