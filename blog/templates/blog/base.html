@@ -8,11 +8,10 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
         -->
+        <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+
         <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'blog/css/bootstrap-theme.min.css' %}">
-
-        <link rel="stylesheet" href="{% static 'blog/css/fa-solid.min.css' %}">
-        <link rel="stylesheet" href="{% static 'blog/css/fontawesome.min.css' %}">
 
         <link rel="stylesheet" href="{% static 'blog/style.css' %}">
         <link rel="shortcut icon" href="{% static 'blog/favicon.ico' %}"/>
@@ -22,18 +21,25 @@
 
         <body>
             <div class="page-header">
-                {% if user.is_authenticated %}
-                    <a href="{% url 'post_new' %}" class="btn btn-primary top-menu">Adicionar</a>
-                    <a href="{% url 'post_draft_list' %}" class="btn btn-secondary top-menu">Rascunhos</a>
-                    <p class="top-menu"><small style="font-size: 20px">Bem vindo(a) {{ user.username }}. <a href="{% url 'logout' %}" class="btn btn-danger">Encerrar sessão</a></small></p>
-                {% else %}
-                    <a href="{% url 'login' %}" class="top-menu"><span class="fas fa-user"></span></a>
-                {% endif %}
-                <h1 class="fonte"><a href="{% url 'post_list' %}">Blog de Marcio Grazianni</a></h1>
+                <div class="row">
+                    <div class="col-xs-7 col-sm-7 col-md-7">
+                        <h1 class="fonte"><a href="{% url 'post_list' %}">Blog de Marcio Grazianni</a></h1>
+                    </div>
+                    <div class="col-xs-5 col-sm-5 col-md-5" align="right">
+                        {% if user.is_authenticated %}
+                            <span class="fonte">Bem vindo(a) {{ user.username }}.</span>
+                            <a href="{% url 'post_new' %}" class="btn btn-primary">Adicionar</a>
+                            <a href="{% url 'post_draft_list' %}" class="btn btn-secondary">Rascunhos</a>
+                            <a href="{% url 'logout' %}" class="btn btn-danger">Encerrar sessão</a>
+                        {% else %}
+                            <a href="{% url 'login' %}" class="btn btn-info">Login</a>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
             <div class="content container">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
                         {% block content %}
                         {% endblock %}
                     </div>
