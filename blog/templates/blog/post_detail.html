@@ -4,7 +4,7 @@
     <div class="post">
         {% if post.published_date %}
             <div class="date">
-                <p>Publicado: {{ post.published_date }}</p>
+                <p>Publicado em: {{ post.published_date }}</p>
             </div>
         {% else %}
                 <a class="btn btn-success" href="{% url 'post_publish' post.id %}">Publicar</a>
