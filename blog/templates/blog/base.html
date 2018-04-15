@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-xs-5 col-sm-5 col-md-5" align="right">
                         {% if user.is_authenticated %}
-                            <span class="fonte">Bem vindo(a) {{ user.username }}.</span>
+                            <span class="fonte">Bem vindo(a) {{ user.first_name }}.</span>
                             <a href="{% url 'post_new' %}" class="btn btn-primary">Adicionar</a>
                             <a href="{% url 'post_draft_list' %}" class="btn btn-secondary">Rascunhos</a>
                             <a href="{% url 'logout' %}" class="btn btn-danger">Encerrar sessão</a>

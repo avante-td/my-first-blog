@@ -3,7 +3,7 @@
 {% block content %}
     {% for post in posts %}
         <div class="post">
-            <p class="date">Criado em: {{ post.created_date|date:'d/m/Y H:i:s' }}</p>
+            <p class="date"><b>Criado em:</b> {{ post.created_date|date:'d/m/Y H:i:s' }} <b>Autor:</b> {{ post.author.first_name }}</p>
             <h1><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h1>
             <p>{{ post.text|truncatechars:200 }}</p>
         </div>
