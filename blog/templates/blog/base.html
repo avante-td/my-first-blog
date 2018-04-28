@@ -2,16 +2,12 @@
 <html>
 
     <head>
-        <title>Blog de Marcio Grazianni</title>
-        <!--
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-        -->
+        <title>As teorias mais loucas de todos os tempos</title>
         <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{% static 'blog/css/bootstrap-theme.min.css' %}">
 
         <link rel="stylesheet" href="{% static 'blog/style.css' %}">
         <link rel="shortcut icon" href="{% static 'blog/favicon.ico' %}"/>
@@ -23,7 +19,7 @@
             <div class="page-header">
                 <div class="row">
                     <div class="col-xs-7 col-sm-7 col-md-7">
-                        <h2><a class="fonte" href="{% url 'post_list' %}">As teorias mais loucas de todos os tempos</a></h2>
+                        <h1><a class="fonte fogo" href="{% url 'post_list' %}">As teorias mais loucas de todos os tempos</a></h1>
                     </div>
                     <div class="col-xs-5 col-sm-5 col-md-5" align="right">
                         {% if user.is_authenticated %}
@@ -37,14 +33,15 @@
                     </div>
                 </div>
             </div>
-            <div class="content container">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        {% block content %}
-                        {% endblock %}
-                    </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    {% block content %}
+                    {% endblock %}
                 </div>
             </div>
-        </body>
 
+            <script src="{% static 'locacao/js/jquery.min.js' %}"></script>
+            <script src="{% static 'locacao/js/bootstrap.min.js' %}"></script>
+        </body>
 </html>

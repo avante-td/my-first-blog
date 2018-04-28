@@ -4,7 +4,7 @@
     <div class="post">
         {% if post.published_date %}
             <div class="date">
-                <p>Publicado em: {{ post.published_date }}</p>
+                <b>Publicado em:</b> {{ post.published_date }} <b>Autor:</b> {{ post.author.first_name }}
             </div>
         {% else %}
             {% if user.is_authenticated and user.id == post.author.id %}

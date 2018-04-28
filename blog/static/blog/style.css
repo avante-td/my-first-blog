@@ -1,5 +1,5 @@
 html, body {
-  overflow-x:hidden
+    overflow-x:hidden;
 }
 
 .fonte {
@@ -23,8 +23,8 @@ html, body {
 
 .content {
   margin-top: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 0px;
+  margin-right: 10px;
 }
 
 .separacao-h {
@@ -40,7 +40,8 @@ html, body {
 }
 
 .post-form textarea, .post-form input {
-  width: 100%;
+    float: left;
+    width: 100%;
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
@@ -51,9 +52,19 @@ html, body {
 }
 
 .post {
-  margin-bottom: 70px;
+    margin: 15px 15px 70px 15px;
+  /* margin-bottom: 70px; */
 }
 
 .post h1 a, .post h1 a:visited {
   color: #000000;
+}
+
+.sombra-interna {
+    text-shadow: 0 1px 0 #FFFFFF;
+}
+
+.fogo {
+    color: #fff;
+    text-shadow: 0px -1px 4px white, 0px -2px 10px yellow, 0px -10px 20px #ff8000, 0px -18px 40px red
 }

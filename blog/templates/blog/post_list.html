@@ -4,7 +4,7 @@
     {% for post in posts %}
         <div class="post">
             <div class="date">
-                <p><b>Publicado:</b> {{ post.published_date }} <b>Autor:</b> {{ post.author.first_name }}</p>
+                <b>Publicado:</b> {{ post.published_date }} <b>Autor:</b> {{ post.author.first_name }}
             </div>
             <h1><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h1>
             <p>{{ post.text|linebreaksbr }}</p>
