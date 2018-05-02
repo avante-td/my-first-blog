@@ -17,6 +17,8 @@
             <a class="btn btn-danger" href="{% url 'post_remove' post.id %}">Excluir</a>
         {% endif %}
         <h1>{{ post.title }}</h1>
+        {% autoescape off %}
         <p>{{ post.text|linebreaksbr }}</p>
+        {% endautoescape %}
     </div>
 {% endblock %}

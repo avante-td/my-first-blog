@@ -7,7 +7,9 @@
                 <b>Criado em:</b> {{ post.created_date|date:'d/m/Y H:i:s' }} <b>Autor:</b> {{ post.author.first_name }}
             </div>
             <h1><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h1>
-            <p>{{ post.text|truncatechars:200 }}</p>
+            {% autoescape off %}
+            <p>{{ post.text|linebreaksbr }}</p>
+            {% endautoescape %}
         </div>
     {% endfor %}
 {% endblock %}
